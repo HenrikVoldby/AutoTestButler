@@ -13,14 +13,14 @@ namespace TivoliTests
         [Scope(Tag = "InternetExplorer")]
         public void BeforeInternetExplorerScenario()
         {
-            ScenarioContext.Current.Set<IWebDriver>(new InternetExplorerDriver(@"C:\Work\Test\TestSpecifications\packages\Selenium.WebDriver.IEDriver.3.11.1\driver"), nameof(IWebDriver));
+            ScenarioContext.Current.Set<IWebDriver>(new InternetExplorerDriver(), nameof(IWebDriver));
         }
 
         [BeforeScenario(Order = 2)]
         [Scope(Tag = "Chrome")]
         public void BeforeChromeScenario()
         {
-            ScenarioContext.Current.Set<IWebDriver>(new ChromeDriver(@"C:\Work\Test\TestSpecifications\packages\Selenium.WebDriver.ChromeDriver.2.38.0\driver\win32"), nameof(IWebDriver));
+            ScenarioContext.Current.Set<IWebDriver>(new ChromeDriver(), nameof(IWebDriver));
         }
 
         [BeforeScenario(Order = 3)]
@@ -29,7 +29,7 @@ namespace TivoliTests
         public void BeforeScenario()
         {
             if (!ScenarioContext.Current.ContainsKey(nameof(IWebDriver)))
-                ScenarioContext.Current.Set<IWebDriver>(new InternetExplorerDriver(@"C:\Work\Test\TestSpecifications\packages\Selenium.WebDriver.IEDriver.3.11.1\driver"), nameof(IWebDriver));
+                ScenarioContext.Current.Set<IWebDriver>(new InternetExplorerDriver(), nameof(IWebDriver));
         }
     }
 }
