@@ -3,8 +3,8 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Configuration;
-using System.Threading;
 using TechTalk.SpecFlow;
+using TestsCommon;
 
 namespace TivoliTests
 {

@@ -84,22 +84,22 @@ namespace DanskeSpilTests
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("I can complete the quick guldbarren game in Chrome")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("I can complete the quick guldbarren game in InternetExplorer")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DanskeSpilTests")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Chrome")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("InternetExplorer")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Quick")]
-        public virtual void ICanCompleteTheQuickGuldbarrenGameInChrome()
+        public virtual void ICanCompleteTheQuickGuldbarrenGameInInternetExplorer()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I can complete the quick guldbarren game in Chrome", new string[] {
-                        "Chrome",
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I can complete the quick guldbarren game in InternetExplorer", new string[] {
+                        "InternetExplorer",
                         "Quick"});
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
  testRunner.Given("I open the DanskeSpil web site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
- testRunner.Given("I click the link with xpath selector \'//a[@href=\"https://danskespil.dk/quick/?int" +
-                    "cmp=top_menu_quick_brand\"]\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I click the link with xpath selector \'//a[@href=\"/quick/?intcmp=top_menu_quick_br" +
+                    "and\"]\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
  testRunner.Given("I click the link with xpath selector \'//a[@href=\'/quick/spil/guldbarren?demo=1\']\'" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
@@ -130,22 +130,22 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("I can complete the quick smil i sigte game in InternetExplorer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("I can complete the quick smil i sigte game in Chrome")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DanskeSpilTests")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("InternetExplorer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Chrome")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Quick")]
-        public virtual void ICanCompleteTheQuickSmilISigteGameInInternetExplorer()
+        public virtual void ICanCompleteTheQuickSmilISigteGameInChrome()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I can complete the quick smil i sigte game in InternetExplorer", new string[] {
-                        "InternetExplorer",
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I can complete the quick smil i sigte game in Chrome", new string[] {
+                        "Chrome",
                         "Quick"});
 #line 24
 this.ScenarioSetup(scenarioInfo);
 #line 25
  testRunner.Given("I open the DanskeSpil web site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 26
- testRunner.Given("I click the link with xpath selector \'//a[@href=\"https://danskespil.dk/quick/?int" +
-                    "cmp=top_menu_quick_brand\"]\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I click the link with xpath selector \'//a[@href=\"/quick/?intcmp=top_menu_quick_br" +
+                    "and\"]\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 27
  testRunner.Given("I click the link with xpath selector \'//a[@href=\'/quick/spil/smil-i-sigte?demo=1\'" +
                     "]\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");

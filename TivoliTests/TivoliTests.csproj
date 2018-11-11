@@ -62,7 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DriverExtensions.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -98,6 +97,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\IEDriverServer.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TestsCommon\TestsCommon.csproj">
+      <Project>{7c1f43bc-8f61-4821-9675-e95b2a9df903}</Project>
+      <Name>TestsCommon</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

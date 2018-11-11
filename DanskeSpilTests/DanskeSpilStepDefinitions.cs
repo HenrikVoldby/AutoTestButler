@@ -4,6 +4,7 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using System.Configuration;
 using TechTalk.SpecFlow;
+using TestsCommon;
 
 namespace DanskeSpilTests
 {
@@ -42,13 +43,13 @@ namespace DanskeSpilTests
         [Given(@"I wait for the game to finish")]
         public void GivenIWaitForTheGameToFinish()
         {
-            Driver.WaitForElement(By.ClassName("bwi-modal-message"), seconds: 120);
+            Driver.WaitUntilExists(By.ClassName("bwi-modal-message"), 120);
         }
 
         [When(@"I wait until the game has loaded")]
         public void WhenIWaitUntilTheElementHasLoaded()
         {
-            Driver.WaitForElement(By.Id("scratchAreaContainer"), seconds: 120);
+            Driver.WaitUntilExists(By.Id("scratchAreaContainer"), 120);
         }
 
         [Then(@"The page contains (.*) '(.*)'")]
@@ -56,7 +57,7 @@ namespace DanskeSpilTests
         {
             if (elementType == "substring") Assert.IsTrue(Driver.WaitForSubstring(substring), $"Page source does not contain {substring}");
             else if (elementType == "image") Assert.IsNotNull(Driver.FindImage(substring));
-            else if (elementType == "element") Assert.IsNotNull(Driver.WaitForElement(By.Id(substring), seconds: 20));
+            else if (elementType == "element") Assert.IsNotNull(Driver.WaitUntilExists(By.Id(substring), 20));
             else throw new ArgumentOutOfRangeException(nameof(elementType));
         }
 
@@ -64,8 +65,8 @@ namespace DanskeSpilTests
         public void ThenTheGameContainerIVisible(string gameContainer)
         {
             IWebElement webElement = null;
-            if (gameContainer == GameContainers.Guldbarren.ToString()) webElement = Driver.WaitForElement(By.Id("QKGULD-scratch-gamezone"));
-            if (gameContainer == GameContainers.SmilISigte.ToString()) webElement = Driver.WaitForElement(By.Id("QKSS-scratch-gamezone"));
+            if (gameContainer == GameContainers.Guldbarren.ToString()) webElement = Driver.WaitUntilExists(By.Id("QKGULD-scratch-gamezone"));
+            if (gameContainer == GameContainers.SmilISigte.ToString()) webElement = Driver.WaitUntilExists(By.Id("QKSS-scratch-gamezone"));
 
             Assert.IsTrue(webElement != null);
         }
@@ -74,23 +75,22 @@ namespace DanskeSpilTests
         public void WhenIClickTheControl(string elementType, string elementSelector, string elementIdentifier)
         {
             if (elementType == "link")
-                Driver.ClickLink(GetElementSelector(elementSelector, elementIdentifier));
+                Driver.ClickElement(GetElementSelector(elementSelector, elementIdentifier));
             if (elementType == "button")
-                Driver.ClickButton(GetElementSelector(elementSelector, elementIdentifier));
-
+                Driver.ClickElement(GetElementSelector(elementSelector, elementIdentifier));
         }
 
         [When(@"I click the link with URL '(.*)'")]
         public void WhenIClickTheLinkWithURL(string url)
         {
-            Driver.ClickLink(GetElementSelector("xpath", $"//a[@href=\"{url}\"]"));
+            Driver.ClickElement(GetElementSelector("xpath", $"//a[@href=\"{url}\"]"));
         }
 
         [When(@"I (.*) '(.*)' in the '(.*)' (.*)"), Given(@"I (.*) '(.*)' in the '(.*)' (.*)")]
         public void WhenIChooseInTheCombobox(string action, string value, string elementId, string controlType)
         {
             if (action == "choose") Driver.ChooseValue(By.Id(elementId), value);
-            if (action == "click") Driver.ClickLink(By.Id(elementId));
+            if (action == "click") Driver.ClickElement(By.Id(elementId));
             if (action == "enter") Driver.SendKeys(By.Id(elementId), value);
         }
 

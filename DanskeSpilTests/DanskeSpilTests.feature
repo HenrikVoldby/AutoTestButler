@@ -3,10 +3,10 @@
 	As a user
 	I want to navigate between pages
 
-@Chrome @Quick
-Scenario: I can complete the quick guldbarren game in Chrome
+@InternetExplorer @Quick
+Scenario: I can complete the quick guldbarren game in InternetExplorer
 	Given I open the DanskeSpil web site
-	Given I click the link with xpath selector '//a[@href="https://danskespil.dk/quick/?intcmp=top_menu_quick_brand"]'
+	Given I click the link with xpath selector '//a[@href="/quick/?intcmp=top_menu_quick_brand"]'
 	Given I click the link with xpath selector '//a[@href='/quick/spil/guldbarren?demo=1']'
 	 When I wait until the game has loaded
 	 Then The 'Guldbarren' game container is visible
@@ -20,10 +20,10 @@ Scenario: I can complete the quick guldbarren game in Chrome
 	 When I click the button with xpath selector '//button[text() = 'Auto skrab']'
 	Given I wait for the game to finish
 
-@InternetExplorer @Quick
-Scenario: I can complete the quick smil i sigte game in InternetExplorer
+@Chrome @Quick
+Scenario: I can complete the quick smil i sigte game in Chrome
 	Given I open the DanskeSpil web site
-	Given I click the link with xpath selector '//a[@href="https://danskespil.dk/quick/?intcmp=top_menu_quick_brand"]'
+	Given I click the link with xpath selector '//a[@href="/quick/?intcmp=top_menu_quick_brand"]'
 	Given I click the link with xpath selector '//a[@href='/quick/spil/smil-i-sigte?demo=1']'
 	 When I wait until the game has loaded
 	 Then The 'SmilISigte' game container is visible

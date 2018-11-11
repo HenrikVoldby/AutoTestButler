@@ -4,6 +4,7 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using System.Configuration;
 using TechTalk.SpecFlow;
+using TestsCommon;
 
 namespace MPPensionTests
 {
