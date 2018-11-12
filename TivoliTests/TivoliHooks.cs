@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.IE;
+using OpenQA.Selenium.PhantomJS;
 using TechTalk.SpecFlow;
 
 namespace TivoliTests
@@ -20,7 +21,9 @@ namespace TivoliTests
         [Scope(Tag = "Chrome")]
         public void BeforeChromeScenario()
         {
-            ScenarioContext.Current.Set<IWebDriver>(new ChromeDriver(), nameof(IWebDriver));
+            ChromeOptions options = new ChromeOptions();
+            options.AddArguments("headless");
+            ScenarioContext.Current.Set<IWebDriver>(new ChromeDriver(options), nameof(IWebDriver));
         }
 
         [BeforeScenario(Order = 3)]
