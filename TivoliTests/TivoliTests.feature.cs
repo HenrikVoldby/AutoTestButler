@@ -95,8 +95,10 @@ this.ScenarioSetup(scenarioInfo);
 #line 8
  testRunner.Given("I open the Tivoli web site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
-  testRunner.When("I click the link with text \'Kontakt os\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.Then("The page contains header \'Glæd dig til\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 10
+  testRunner.When("I click the link with text \'Kontakt os\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 11
   testRunner.Then("The page contains substring \'Åbningstider for Tivolis Callcenter i perioden\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -110,15 +112,17 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I can access the Tivoli Foodhall page under Spisesteder in Chrome", new string[] {
                         "Chrome"});
-#line 13
-this.ScenarioSetup(scenarioInfo);
 #line 14
- testRunner.Given("I open the Tivoli web site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 15
-  testRunner.When("I click the menu item with text \'Mad og drikke\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I open the Tivoli web site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 16
-  testRunner.When("I click the menu item with text \'Tivoli Food Hall\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.Then("The page contains header \'Glæd dig til\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 17
+  testRunner.When("I click the menu item with text \'Mad og drikke\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 18
+  testRunner.When("I click the menu item with text \'Tivoli Food Hall\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 19
   testRunner.Then("The page contains header \'Tivoli Food Hall\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -132,17 +136,19 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I can not enter an invalid email address when applying for news letter in IE", new string[] {
                         "InternetExplorer"});
-#line 20
-this.ScenarioSetup(scenarioInfo);
-#line 21
- testRunner.Given("I open the Tivoli web site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 22
- testRunner.Given("I click the menu item with text \'Mad og drikke\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 23
-  testRunner.When("I enter \'not_a_valid_mailaddress\' in the \'NewsletterFormEmailID\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I open the Tivoli web site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 24
-  testRunner.When("I click the button with text \'Hold mig opdateret\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.Then("The page contains header \'Glæd dig til\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 25
+ testRunner.Given("I click the menu item with text \'Mad og drikke\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 26
+  testRunner.When("I enter \'not_a_valid_mailaddress\' in the \'NewsletterFormEmailID\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 27
+  testRunner.When("I click the button with text \'Hold mig opdateret\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 28
   testRunner.Then("The \'NewsletterFormEmailID\' textbox shows validation message \'Du skal angive en g" +
                     "yldig mailadresse\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
