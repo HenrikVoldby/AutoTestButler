@@ -21,12 +21,19 @@ namespace TivoliTests
         [Scope(Tag = "Chrome")]
         public void BeforeChromeScenario()
         {
-            ChromeOptions options = new ChromeOptions();
-            options.AddArguments("headless");
+            var options = new ChromeOptions();
+            options.AddArgument("headless");
             ScenarioContext.Current.Set<IWebDriver>(new ChromeDriver(options), nameof(IWebDriver));
         }
 
-        [BeforeScenario(Order = 3)]
+        [BeforeScenario(Order = 2)]
+        [Scope(Tag = "PhantomJS")]
+        public void BeforePhantomJSScenario()
+        {
+            ScenarioContext.Current.Set<IWebDriver>(new PhantomJSDriver(), nameof(IWebDriver));
+        }
+
+        [BeforeScenario(Order = 4)]
         [Scope(Tag = "InternetExplorer")]
         [Scope(Tag = "Chrome")]
         public void BeforeScenario()

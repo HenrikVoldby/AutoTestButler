@@ -70,11 +70,14 @@ namespace TivoliTests
 
         private static By GetElementSelector(string elementType, string elementSelector, string elementIdentifier)
         {
-            if (elementType == "menu item")
-                return By.XPath($"//span[text() = '{elementIdentifier}']");
+            if (elementType == "main menu item")
+                return By.XPath($"//button[@aria-label = '{elementIdentifier}']");
 
             if (elementType == "button")
                 return By.XPath($"//span[text() = '{elementIdentifier}']");
+
+            if (elementType == "submenu item")
+                return By.XPath($"//a//span[text() = '{elementIdentifier}']");
 
             if (elementSelector.ToLower() == "id") return By.Id(elementIdentifier);
             else if (elementSelector.ToLower() == "xpath") return By.XPath(elementIdentifier);
