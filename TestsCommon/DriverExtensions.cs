@@ -57,7 +57,7 @@ namespace TestsCommon
 
         public static void SendKeys(this IWebDriver driver, By selector, string value, bool clearText = true)
         {
-            var element = driver.FindElement(selector);
+            var element = driver.WaitForElement(ExpectedConditions.ElementToBeClickable(selector));
             if (clearText) element.Clear();
             element.SendKeys(value + Keys.Tab);
         }
