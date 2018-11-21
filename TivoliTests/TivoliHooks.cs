@@ -22,7 +22,7 @@ namespace TivoliTests
         public void BeforeChromeScenario()
         {
             var options = new ChromeOptions();
-            options.AddArgument("headless");
+            //options.AddArgument("headless");
             ScenarioContext.Current.Set<IWebDriver>(new ChromeDriver(options), nameof(IWebDriver));
         }
 

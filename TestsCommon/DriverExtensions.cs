@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
 
@@ -47,7 +48,6 @@ namespace TestsCommon
             return true;
         }
 
-
         public static string GetValidationMessage(this IWebDriver driver, By selector)
         {
             var element = driver.WaitUntilClickable(selector);
@@ -55,11 +55,28 @@ namespace TestsCommon
             return (string)executor.ExecuteScript("return arguments[0].validationMessage;", element);
         }
 
+        public static string GetTooltipMessage(this IWebDriver driver, By selector)
+        {
+            var mouseAction = new Actions(driver);
+            var element = driver.WaitUntilClickable(selector);
+            mouseAction.MoveToElement(element).Perform();
+            var toolTipElement = driver.WaitUntilExists(By.CssSelector(".UIInput_input"));
+            return toolTipElement.Text;
+        }
+
         public static void SendKeys(this IWebDriver driver, By selector, string value, bool clearText = true)
         {
             var element = driver.WaitForElement(ExpectedConditions.ElementIsVisible(selector));
             if (clearText) element.Clear();
-            element.SendKeys(value + Keys.Tab);
+            try
+            {
+                element.SendKeys(value + Keys.Tab);
+            }
+            catch (Exception)
+            {
+                IJavaScriptExecutor executor = (IJavaScriptExecutor)driver;
+                executor.ExecuteScript($"arguments[0].value = '{value + Keys.Tab}';", element);
+            }
         }
 
         public static IWebElement WaitUntilExists(this IWebDriver driver, By selector, int seconds = defaultWaitSeconds)

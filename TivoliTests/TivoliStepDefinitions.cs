@@ -44,12 +44,12 @@ namespace TivoliTests
                 Assert.IsTrue(wait.Until((d) => d.PageSource.IndexOf($"<h1>{text}</h1>", StringComparison.InvariantCultureIgnoreCase) > 0), Driver.PageSource);
         }
 
-        [Then(@"The '(.*)' textbox shows validation message '(.*)'")]
-        public void ThenTheTextboxShowsValidationMessage(string elementId, string validationMessage)
+        [Then(@"The '(.*)' textbox shows (.*) message '(.*)'")]
+        public void ThenTheTextboxShowsValidationMessage(string elementId, string messageType, string validationMessage)
         {
             var selector = GetElementSelector("textbox", "id", elementId);
-            var actualMessage = Driver.GetValidationMessage(selector);
-            Assert.AreEqual(validationMessage, actualMessage);
+            var actualMessage = messageType.Equals("validation") ? Driver.GetValidationMessage(selector) : Driver.GetTooltipMessage(selector);
+            Assert.IsTrue(actualMessage.Contains(validationMessage), $"Actual value '{actualMessage}' does not contain '{validationMessage}'");
         }
 
         [When(@"I click the (.*) with (.*) '(.*)'"), Given(@"I click the (.*) with (.*) '(.*)'")]

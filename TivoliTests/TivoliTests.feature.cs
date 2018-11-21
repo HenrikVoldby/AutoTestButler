@@ -136,19 +136,19 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I can not enter an invalid email address when applying for news letter in IE", new string[] {
                         "InternetExplorer"});
-#line 22
+#line 31
 this.ScenarioSetup(scenarioInfo);
-#line 23
+#line 32
  testRunner.Given("I open the Tivoli web site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 24
+#line 33
   testRunner.Then("The page contains header \'Glæd dig til\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 25
+#line 34
  testRunner.Given("I click the main menu item with text \'Mad og drikke\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 26
+#line 35
   testRunner.When("I enter \'not_a_valid_mailaddress\' in the \'NewsletterFormEmailID\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 27
+#line 36
   testRunner.When("I click the button with text \'Hold mig opdateret\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 28
+#line 37
   testRunner.Then("The \'NewsletterFormEmailID\' textbox shows validation message \'Du skal angive en g" +
                     "yldig mailadresse\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -165,17 +165,17 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I can not enter an invalid email address when applying for news letter in headles" +
                     "s browser", new string[] {
                         "PhantomJS"});
-#line 31
+#line 40
 this.ScenarioSetup(scenarioInfo);
-#line 32
+#line 41
  testRunner.Given("I open the Tivoli web site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 33
+#line 42
   testRunner.Then("The page contains header \'Glæd dig til\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 34
+#line 43
  testRunner.Given("I click the main menu item with text \'Praktisk information\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 35
+#line 44
  testRunner.Given("I click the submenu item with text \'Priser\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 36
+#line 45
   testRunner.Then("The page contains header \'Priser\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
