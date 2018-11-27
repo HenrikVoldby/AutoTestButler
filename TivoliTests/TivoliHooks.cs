@@ -14,7 +14,8 @@ namespace TivoliTests
         [Scope(Tag = "InternetExplorer")]
         public void BeforeInternetExplorerScenario()
         {
-            ScenarioContext.Current.Set<IWebDriver>(new InternetExplorerDriver(), nameof(IWebDriver));
+            var options = new InternetExplorerOptions();
+            ScenarioContext.Current.Set<IWebDriver>(new InternetExplorerDriver(options), nameof(IWebDriver));
         }
 
         [BeforeScenario(Order = 2)]
@@ -22,11 +23,11 @@ namespace TivoliTests
         public void BeforeChromeScenario()
         {
             var options = new ChromeOptions();
-            //options.AddArgument("headless");
+            options.AddArgument("--lang=en");
             ScenarioContext.Current.Set<IWebDriver>(new ChromeDriver(options), nameof(IWebDriver));
         }
 
-        [BeforeScenario(Order = 2)]
+        [BeforeScenario(Order = 3)]
         [Scope(Tag = "PhantomJS")]
         public void BeforePhantomJSScenario()
         {

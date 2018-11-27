@@ -66,17 +66,12 @@ namespace TestsCommon
 
         public static void SendKeys(this IWebDriver driver, By selector, string value, bool clearText = true)
         {
-            var element = driver.WaitForElement(ExpectedConditions.ElementIsVisible(selector));
-            if (clearText) element.Clear();
-            try
+            RetryPolicyHelper.ElementNotFoundRetryPolicy().Execute(() =>
             {
+                var element = driver.FindElement(selector);
+                if (clearText) element.Clear();
                 element.SendKeys(value + Keys.Tab);
-            }
-            catch (Exception)
-            {
-                IJavaScriptExecutor executor = (IJavaScriptExecutor)driver;
-                executor.ExecuteScript($"arguments[0].value = '{value + Keys.Tab}';", element);
-            }
+            });
         }
 
         public static IWebElement WaitUntilExists(this IWebDriver driver, By selector, int seconds = defaultWaitSeconds)
@@ -97,7 +92,6 @@ namespace TestsCommon
         private static IWebElement WaitForElement(this IWebDriver driver, Func<IWebDriver, IWebElement> expectedCondition, int waitSeconds = defaultWaitSeconds)
         {
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSeconds));
-            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(ElementNotVisibleException), typeof(StaleElementReferenceException));
             return wait.Until(expectedCondition);
         }
     }

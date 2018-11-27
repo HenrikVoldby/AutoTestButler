@@ -83,13 +83,13 @@ namespace TivoliTests
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("I can access the contact us page in Chrome")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("I can access the contact us page in IE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "TivoliTests")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Chrome")]
-        public virtual void ICanAccessTheContactUsPageInChrome()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("InternetExplorer")]
+        public virtual void ICanAccessTheContactUsPageInIE()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I can access the contact us page in Chrome", new string[] {
-                        "Chrome"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I can access the contact us page in IE", new string[] {
+                        "InternetExplorer"});
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
@@ -129,41 +129,39 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("I can not enter an invalid email address when applying for news letter in IE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("I can not enter an invalid email address when applying for news letter in Chrome")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "TivoliTests")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("InternetExplorer")]
-        public virtual void ICanNotEnterAnInvalidEmailAddressWhenApplyingForNewsLetterInIE()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Chrome")]
+        public virtual void ICanNotEnterAnInvalidEmailAddressWhenApplyingForNewsLetterInChrome()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I can not enter an invalid email address when applying for news letter in IE", new string[] {
-                        "InternetExplorer"});
-#line 31
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I can not enter an invalid email address when applying for news letter in Chrome", new string[] {
+                        "Chrome"});
+#line 22
 this.ScenarioSetup(scenarioInfo);
-#line 32
+#line 23
  testRunner.Given("I open the Tivoli web site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 33
+#line 24
   testRunner.Then("The page contains header \'Glæd dig til\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 34
+#line 25
  testRunner.Given("I click the main menu item with text \'Mad og drikke\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 35
+#line 26
   testRunner.When("I enter \'not_a_valid_mailaddress\' in the \'NewsletterFormEmailID\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 36
+#line 27
   testRunner.When("I click the button with text \'Hold mig opdateret\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 37
-  testRunner.Then("The \'NewsletterFormEmailID\' textbox shows validation message \'Du skal angive en g" +
-                    "yldig mailadresse\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 28
+  testRunner.Then("The \'NewsletterFormEmailID\' textbox shows validation message \'Please include an \'" +
+                    "@\' in the email address.\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("I can not enter an invalid email address when applying for news letter in headles" +
-            "s browser")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("I can access the price information page in headless browser")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "TivoliTests")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PhantomJS")]
-        public virtual void ICanNotEnterAnInvalidEmailAddressWhenApplyingForNewsLetterInHeadlessBrowser()
+        public virtual void ICanAccessThePriceInformationPageInHeadlessBrowser()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I can not enter an invalid email address when applying for news letter in headles" +
-                    "s browser", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I can access the price information page in headless browser", new string[] {
                         "PhantomJS"});
 #line 40
 this.ScenarioSetup(scenarioInfo);
